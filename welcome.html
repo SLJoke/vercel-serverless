@@ -1,12 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>welcome</title>
+  <title>404</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1000px;
+      overflow: hidden;
+      background-color: rgba(10, 10, 10, .8);
+      --width: 100px;
+    }
+
+    div {
+      transform-style: preserve-3d;
+    }
+
+    .wrapper {
+      animation: slide 2s linear infinite;
+      position: absolute;
+    }
+
+    .box {
+      width: var(--width);
+      height: var(--width);
+
+      transform-origin: 100% 100%;
+
+      animation: rot 2s cubic-bezier(1.000, 0.010, 1.000, 1.000) infinite;
+    }
+
+    .box .surface {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-color: rgba(231, 76, 60, .65);
+      /* background-color: rgba(10, 10, 10, .8); */
+      border: 1px solid #ffffff;
+    }
+
+    .box .surface::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 4rem;
+    }
+
+    .surface:nth-child(1) {
+      transform: translateZ(calc(var(--width) / 2));
+    }
+
+    .surface:nth-child(2) {
+      transform: rotateX(180deg) translateZ(calc(var(--width) / 2));
+    }
+
+    .surface:nth-child(3) {
+      transform: rotateX(90deg) translateZ(calc(var(--width) / 2));
+    }
+
+    .surface:nth-child(3)::after {
+      transform: rotateX(180deg) rotateZ(90deg) translateZ(-1px);
+      animation: rotCont 4s -2s linear infinite;
+    }
+
+    .surface:nth-child(4) {
+      transform: rotateX(-90deg) translateZ(calc(var(--width) / 2));
+    }
+
+    .surface:nth-child(4)::after {
+      transform: rotateX(180deg) rotateZ(-90deg) translateZ(-1px);
+      animation: rotCont 4s -2s linear infinite;
+    }
+
+    .surface:nth-child(5) {
+      transform: rotateY(90deg) translateZ(calc(var(--width) / 2));
+    }
+
+    .surface:nth-child(5)::after {
+      transform: rotateX(180deg) translateZ(-1px);
+      animation: rotCont 4s linear infinite;
+    }
+
+    .surface:nth-child(6) {
+      transform: rotateY(-90deg) translateZ(calc(var(--width) / 2));
+    }
+
+    .surface:nth-child(6)::after {
+      transform: rotateX(180deg) rotateZ(180deg) translateZ(-1px);
+      animation: rotCont 4s linear infinite;
+    }
+
+    @keyframes rot {
+      0% {
+        transform: rotateZ(0deg);
+      }
+
+      85% {
+        transform: rotateZ(90deg);
+      }
+
+      87% {
+        transform: rotateZ(88deg);
+      }
+
+      90% {
+        transform: rotateZ(90deg);
+      }
+
+      100% {
+        transform: rotateZ(90deg);
+      }
+    }
+
+    @keyframes rotCont {
+      0% {
+        content: '4'
+      }
+
+      100% {
+        content: '0';
+      }
+    }
+
+    @keyframes slide {
+      0% {
+        transform: rotateX(-20deg) rotateY(-25deg) translateX(0px);
+      }
+
+      100% {
+        transform: rotateX(-20deg) rotateY(-25deg) translateX(-100px);
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>welcome!</h1>
+  <div class="container">
+    <div class="track">
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+      <div class="track-item"></div>
+    </div>
+    <div class="wrapper">
+      <div class="box">
+        <div class="surface plane"></div>
+        <div class="surface plane"></div>
+        <div class="surface plane"></div>
+        <div class="surface plane"></div>
+        <div class="surface plane"></div>
+        <div class="surface plane"></div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>
