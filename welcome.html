@@ -11,6 +11,7 @@
       padding: 0;
       margin: 0;
       box-sizing: border-box;
+      user-select: none;
     }
 
     body {
@@ -21,16 +22,151 @@
       perspective: 1000px;
       overflow: hidden;
       background-color: rgba(10, 10, 10, .8);
-      --width: 100px;
+      --width: 150px;
+      font-size: 20px;
     }
 
     div {
       transform-style: preserve-3d;
     }
 
+    .track {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotateX(-30deg) rotateY(-30deg);
+    }
+
+    .track-item {
+      position: absolute;
+      width: var(--width);
+      height: var(--width);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 4em;
+      background-color: #d32f32;
+      transform: rotateX(90deg) rotateZ(-90deg) translateZ(-100px) translateY(30px);
+    }
+
+    .track-item:nth-child(1) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -2.3s;
+    }
+
+    .track-item:nth-child(2) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -4.3s;
+    }
+
+    .track-item:nth-child(3) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -6.3s;
+    }
+
+    .track-item:nth-child(4) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -8.3s;
+    }
+
+    .track-item:nth-child(5) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -10.3s;
+    }
+
+    .track-item:nth-child(6) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -12.3s;
+    }
+
+    .track-item:nth-child(7) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -14.3s;
+    }
+
+    .track-item:nth-child(8) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -16.3s;
+    }
+
+    .track-item:nth-child(9) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -18.3s;
+    }
+
+    .track-item:nth-child(10) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -20.3s;
+    }
+
+    .track-item:nth-child(11) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -22.3s;
+    }
+
+    .track-item:nth-child(12) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -24.3s;
+    }
+
+    .track-item:nth-child(13) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -26.3s;
+    }
+
+    .track-item:nth-child(14) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -28.3s;
+    }
+
+    .track-item:nth-child(15) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -30.3s;
+    }
+
+    .track-item:nth-child(16) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -32.3s;
+    }
+
+    .track-item:nth-child(17) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -34.3s;
+    }
+
+    .track-item:nth-child(18) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -36.3s;
+    }
+
+    .track-item:nth-child(19) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -38.3s;
+    }
+
+    .track-item:nth-child(20) {
+      animation: trackSlide 40s linear infinite;
+      animation-delay: -40.3s;
+    }
+
+    @keyframes trackSlide {
+      0% {
+        transform: rotateX(90deg) rotateZ(-90deg) translateZ(calc(var(--width) / 2 * -1)) translateY(calc(var(--width) * 0.15));
+      }
+
+      100% {
+        transform: rotateX(90deg) rotateZ(-90deg) translateZ(calc(var(--width) / 2 * -1)) translateY(calc(var(--width) * 0.15 - var(--width) * 20));
+      }
+    }
+
     .wrapper {
       animation: slide 2s linear infinite;
       position: absolute;
+      transform: rotateX(-30deg) rotateY(-30deg);
     }
 
     .box {
@@ -43,8 +179,8 @@
     }
 
     .box .surface {
-      width: 100%;
-      height: 100%;
+      width: var(--width);
+      height: var(--width);
       position: absolute;
       background-color: rgba(231, 76, 60, .65);
       /* background-color: rgba(10, 10, 10, .8); */
@@ -60,7 +196,7 @@
       justify-content: center;
       align-items: center;
       color: #fff;
-      font-size: 4rem;
+      font-size: 4em;
     }
 
     .surface:nth-child(1) {
@@ -141,41 +277,47 @@
 
     @keyframes slide {
       0% {
-        transform: rotateX(-20deg) rotateY(-25deg) translateX(0px);
+        transform: rotateX(-30deg) rotateY(-30deg) translateX(0px);
       }
 
       100% {
-        transform: rotateX(-20deg) rotateY(-25deg) translateX(-100px);
+        transform: rotateX(-30deg) rotateY(-30deg) translateX(calc(-1 * var(--width)));
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="track">
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-      <div class="track-item"></div>
-    </div>
-    <div class="wrapper">
-      <div class="box">
-        <div class="surface plane"></div>
-        <div class="surface plane"></div>
-        <div class="surface plane"></div>
-        <div class="surface plane"></div>
-        <div class="surface plane"></div>
-        <div class="surface plane"></div>
-      </div>
+  <div class="track">
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+    <div class="track-item">4</div>
+    <div class="track-item">0</div>
+  </div>
+  <div class="wrapper">
+    <div class="box">
+      <div class="surface plane"></div>
+      <div class="surface plane"></div>
+      <div class="surface plane"></div>
+      <div class="surface plane"></div>
+      <div class="surface plane"></div>
+      <div class="surface plane"></div>
     </div>
   </div>
 </body>
